@@ -53,6 +53,7 @@ public class BasicRestController {
 	public ResponseEntity<? extends ResponseDto> create(@RequestBody BasicTestDto basicTestDto) {
 		System.out.println("데이터 추가");
 		
+		// created는 uri를 넣을 수 있는데 생성 시 해당 uri로 이동 가능
 		return ResponseEntity.created(null).body(DataResponseDto.of(basicTestDto));
 	}
 	
