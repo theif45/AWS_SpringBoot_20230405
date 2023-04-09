@@ -56,7 +56,7 @@ CREATE TABLE `lecture_registe_mst` (
   `student_id` int NOT NULL,
   `registe_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -65,6 +65,7 @@ CREATE TABLE `lecture_registe_mst` (
 
 LOCK TABLES `lecture_registe_mst` WRITE;
 /*!40000 ALTER TABLE `lecture_registe_mst` DISABLE KEYS */;
+INSERT INTO `lecture_registe_mst` VALUES (1,1,1,'2023-04-09');
 /*!40000 ALTER TABLE `lecture_registe_mst` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -80,7 +81,7 @@ CREATE TABLE `lecturer_mst` (
   `name` varchar(45) NOT NULL,
   `birth_date` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -89,6 +90,7 @@ CREATE TABLE `lecturer_mst` (
 
 LOCK TABLES `lecturer_mst` WRITE;
 /*!40000 ALTER TABLE `lecturer_mst` DISABLE KEYS */;
+INSERT INTO `lecturer_mst` VALUES (1,'이준','1994-07-20');
 /*!40000 ALTER TABLE `lecturer_mst` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,7 +106,7 @@ CREATE TABLE `student_mst` (
   `name` varchar(45) NOT NULL,
   `birth_data` date NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -113,6 +115,7 @@ CREATE TABLE `student_mst` (
 
 LOCK TABLES `student_mst` WRITE;
 /*!40000 ALTER TABLE `student_mst` DISABLE KEYS */;
+INSERT INTO `student_mst` VALUES (1,'박수','2000-08-22');
 /*!40000 ALTER TABLE `student_mst` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -133,4 +136,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-04-07 17:46:29
+-- Dump completed on 2023-04-10  1:00:34
