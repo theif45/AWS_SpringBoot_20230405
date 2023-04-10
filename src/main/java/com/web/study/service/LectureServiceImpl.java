@@ -3,13 +3,13 @@ package com.web.study.service;
 import org.springframework.stereotype.Service;
 
 import com.web.study.domain.entity.Lecture;
-import com.web.study.domain.entity.LectureRegiste;
+import com.web.study.domain.entity.Course;
 import com.web.study.domain.entity.Lecturer;
 import com.web.study.domain.entity.Student;
-import com.web.study.dto.request.lecture.LectureRegisteReqDto;
+import com.web.study.dto.request.Course.CourseReqDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
-import com.web.study.dto.request.lecture.LecturerReqDto;
-import com.web.study.dto.request.lecture.StudentReqDto;
+import com.web.study.dto.request.lecturer.LecturerReqDto;
+import com.web.study.dto.request.student.StudentReqDto;
 import com.web.study.repository.LectureRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -18,6 +18,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LectureServiceImpl implements LectureService{
 	
+	// final => 상수: 초기화가 무조건 일어나야함.
 	private final LectureRepository lectureRepository;
 
 	@Override
@@ -28,25 +29,4 @@ public class LectureServiceImpl implements LectureService{
 		System.out.println("변환: " + lecture);
 		lectureRepository.registe(lecture);
 	}
-
-	@Override
-	public void registeLecturer(LecturerReqDto lecturerReqDto) {
-		Lecturer lecturer = lecturerReqDto.toEntity();
-		lectureRepository.registeLecturer(lecturer);
-	}
-
-	@Override
-	public void registeStudent(StudentReqDto studentReqDto) {
-		Student student = studentReqDto.toEntity();
-		lectureRepository.registeStudent(student);
-		
-	}
-
-	@Override
-	public void registeLectureRegiste(LectureRegisteReqDto lectureRegisteReqDto) {
-		LectureRegiste lectureRegiste = lectureRegisteReqDto.toEntity();
-		lectureRepository.registeLectureRegiste(lectureRegiste);
-		
-	}
-
 }

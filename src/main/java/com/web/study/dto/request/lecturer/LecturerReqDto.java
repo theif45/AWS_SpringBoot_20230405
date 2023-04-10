@@ -1,18 +1,18 @@
-package com.web.study.dto.request.lecture;
+package com.web.study.dto.request.lecturer;
 
 import java.time.LocalDate;
 
-import com.web.study.domain.entity.Student;
+import com.web.study.domain.entity.Lecturer;
 
 import lombok.Setter;
 
 @Setter
-public class StudentReqDto {
+public class LecturerReqDto {
 	private String name;
 	private LocalDate birthDate;
 	
-	public Student toEntity() {
-		return Student.builder()
+	public Lecturer toEntity() {
+		return Lecturer.builder()
 				.name(name)
 				.birth_date(birthDate)
 				.build();
