@@ -1,4 +1,4 @@
-package com.web.study.dto.response.lecturer;
+package com.web.study.dto.response.instructor;
 
 import java.time.LocalDate;
 
@@ -7,7 +7,7 @@ import lombok.Getter;
 
 @Builder
 @Getter
-public class LecturerRespDto {
+public class InstructorRespDto {
 	private int id;
 	private String name;
 	private LocalDate birthDate;
