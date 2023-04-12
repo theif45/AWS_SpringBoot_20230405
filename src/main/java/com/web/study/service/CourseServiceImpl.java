@@ -6,7 +6,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
+import org.springframework.util.StopWatch;
 
+import com.web.study.aop.annotation.ReturnDataAspect;
 import com.web.study.dto.request.Course.CourseReqDto;
 import com.web.study.dto.response.course.CourseRespDto;
 import com.web.study.repository.CourseRepository;
@@ -33,6 +35,7 @@ public class CourseServiceImpl implements CourseService{
 		return dtos;
 	}
 
+	@ReturnDataAspect
 	@Override
 	public List<CourseRespDto> searchCourse(int type, String searchValue) {
 		Map<String, Object> parameterMap = new HashMap<>();
