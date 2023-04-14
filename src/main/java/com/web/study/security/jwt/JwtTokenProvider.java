@@ -86,18 +86,18 @@ public class JwtTokenProvider {
 		} catch (SecurityException | MalformedJwtException e) {
 			// Security 라이브러리에 오류가 있거나, JOSN의 포맷이 잘못된 형식의 JWT가 들어왔을 때 예외
 			// SignatureExceptio9n이 포함되어 있음
-			log.info("Invalid JWT Token");
+			log.info("Invalid JWT Token", e);
 		} catch (ExpiredJwtException e) {
 			// 토큰의 유효기간이 만료된 경우 예외
-			log.info("Expired JWT Token");
+			log.info("Expired JWT Token", e);
 		} catch (UnsupportedJwtException e) {
 			// jwt의 형식을 지키지 않은 경우 (Header.Payload.Signature)
-			log.info("Unsupported JWT Token");
+			log.info("Unsupported JWT Token", e);
 		} catch (IllegalArgumentException e) {
 			// JWT 토큰이 없을 때
-			log.info("IllegalArgument JWT Token");
+			log.info("IllegalArgument JWT Token", e);
 		} catch (Exception e) {
-			System.out.println(e);
+			log.info("JWT Token Error", e);
 		}
 		return false;
 	}
@@ -116,7 +116,7 @@ public class JwtTokenProvider {
 			authorities.add(new SimpleGrantedAuthority(role));
 		});
 		
-		UserDetails userDetails = new User(claims.getSubject(),"",authorities);
+		UserDetails userDetails = new User(claims.getSubject(),"",authorities); // username, password, authorities
 		
 		return new UsernamePasswordAuthenticationToken(userDetails,"",authorities);
 	}
